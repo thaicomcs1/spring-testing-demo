@@ -5,17 +5,20 @@ import com.example.demo.repository.UserRepository;
 import com.example.demo.service.RegisterUseCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-
+@ExtendWith(MockitoExtension.class)
 class RegisterUseCaseTest {
 
-    private UserRepository userRepository = Mockito.mock(UserRepository.class);
+    @Mock
+    private UserRepository userRepository;
 
     private RegisterUseCase registerUseCase;
 
