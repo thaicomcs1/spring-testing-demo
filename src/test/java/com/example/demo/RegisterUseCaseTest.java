@@ -24,18 +24,16 @@ class RegisterUseCaseTest {
     @InjectMocks
     private RegisterUseCase registerUseCase;
 
-//    @BeforeEach
-//    void initUseCase() {
-//        registerUseCase = new RegisterUseCase(userRepository);
-//    }
-
     @Test
     void savedUserHasRegistrationDate() {
+        // Given
         User user = new User("chang", "chang@g-able.com");
+
+        // When
         when(userRepository.save(any(User.class))).then(returnsFirstArg());
         User savedUser = registerUseCase.registerUser(user);
 
-        //assertThat(savedUser.getRegistrationDate()).isNotNull();
+        // Then
         assertThat(savedUser).hasRegistrationDate();
     }
 
