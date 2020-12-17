@@ -15,24 +15,21 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class RegisterUseCaseCoverTests {
-
-    @Mock
-    private UserRepository userRepository;
+class UserRepositoryTests {
 
     @InjectMocks
-    private RegisterUseCase registerUseCase;
+    private UserRepository userRepository;
 
     @Test
-    void savedUserHasRegistrationDate() {
+    void saveUser() {
         // Given
         User user = new User("chang", "chang@g-able.com");
 
         // When
-        user.setName("testchangename");
+        userRepository.save(user);
 
         // Then
-        assertThat(user).toString();
+        assertThat(user).isNotNull();
     }
 
 }
