@@ -7,19 +7,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
 
+    // Test target
     User user;
 
+    // Setup target
     @BeforeEach
     void setUp() {
-
-        String name = "suepsakun";
-        String surname = "aiamlaoo";
-
         user = new User();
-        user.setName(name);
-        user.setSurname(surname);
+        user.setName("suepsakun");
+        user.setSurname("aiamlaoo");
     }
 
+    // Test case 1
     @Test
     void getName() {
 
@@ -31,6 +30,7 @@ class UserTest {
         assertEquals(expected, actual);
     }
 
+    // Test case 2
     @Test
     void getSurname() {
 
@@ -42,6 +42,7 @@ class UserTest {
         assertEquals(expected, actual);
     }
 
+    // Test case 3
     @Test
     void getFullName() {
 
