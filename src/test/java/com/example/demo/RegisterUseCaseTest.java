@@ -10,7 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static com.example.demo.custom.UserAssert.assertThat;
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
@@ -34,7 +34,9 @@ class RegisterUseCaseTest {
         User user = new User("chang", "chang@g-able.com");
         when(userRepository.save(any(User.class))).then(returnsFirstArg());
         User savedUser = registerUseCase.registerUser(user);
-        assertThat(savedUser.getRegistrationDate()).isNotNull();
+
+        //assertThat(savedUser.getRegistrationDate()).isNotNull();
+        assertThat(savedUser).hasRegistrationDate();
     }
 
 }
