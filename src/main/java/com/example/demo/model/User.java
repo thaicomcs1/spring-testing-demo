@@ -11,11 +11,20 @@ public class User {
 
     private Long id;
     private String name;
+    private String surname;
     private String email;
     private LocalDateTime registrationDate;
 
     public User(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    public User() {
+
+    }
+
+    public String getFullName () {
+        return name+" "+surname;
     }
 }
