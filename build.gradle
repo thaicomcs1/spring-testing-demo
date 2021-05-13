@@ -28,7 +28,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     compileOnly 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testCompile('org.mockito:mockito-junit-jupiter:3.9.0')
+    testCompile('org.mockito:mockito-junit-jupiter:3.10.0')
 }
 
 test {
